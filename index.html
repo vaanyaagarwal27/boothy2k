@@ -55,9 +55,26 @@ body{font-family:'Space Grotesk',sans-serif;color:var(--black);cursor:none;}
 
 /* ═══ WELCOME ═══ */
 #s-welcome{background:transparent;align-items:center;justify-content:center;overflow:hidden;}
-.w-floats{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-.w-float{position:absolute;animation:wFloat linear infinite;}
-@keyframes wFloat{from{transform:translateY(110vh) rotate(var(--r));}to{transform:translateY(-60px) rotate(var(--r));}}
+.w-floats {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.w-float {
+  position: absolute;
+  /* This ensures they stay off-screen at the bottom before the animation kicks in */
+  top: 110vh; 
+  animation: wFloat linear infinite;
+}
+
+@keyframes wFloat {
+  /* We start at 0 (which is 110vh) and move up -130vh to clear the top of the screen */
+  from { transform: translateY(0) rotate(var(--r)); }
+  to { transform: translateY(-130vh) rotate(var(--r)); }
+}
 .w-card{
   position:relative;z-index:2;
   background:rgba(255,255,255,.82);
@@ -244,8 +261,24 @@ body{font-family:'Space Grotesk',sans-serif;color:var(--black);cursor:none;}
 .o-btn{border:2px solid var(--mid);border-radius:2px;padding:8px 13px;cursor:none;background:rgba(255,255,255,.7);color:var(--black);font-size:.85rem;transition:all .12s;display:flex;flex-direction:column;align-items:center;gap:4px;}
 .o-btn:hover{border-color:var(--black);}
 .o-btn.active{background:var(--lime);border-color:var(--lime-d);box-shadow:2px 2px 0 var(--lime-d);}
-.lo-ico{display:flex;flex-wrap:wrap;gap:2px;width:26px;height:34px;align-content:flex-start;}
-.li-b{background:var(--black);border-radius:1px;opacity:.6;}
+.lo-ico {
+  display: flex;
+  flex-direction: column; /* Stacks blocks vertically */
+  align-items: center;    /* Centers them horizontally */
+  justify-content: center; /* Centers them vertically */
+  gap: 2px;
+  width: 26px;
+  height: 26px; /* Reduced from 34px to fit the box */
+  margin: 0 auto;
+}
+
+.li-b {
+  background: var(--black);
+  border-radius: 1px;
+  opacity: .6;
+  width: 12px;  /* Fixed width for the blocks */
+  height: 6px;  /* Fixed height for the blocks */
+}
 .color-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 #strip-color-pick,#border-color-pick{width:36px;height:36px;border-radius:2px;border:2px solid var(--mid);cursor:none;padding:0;background:none;outline:none;}
 #strip-color-pick::-webkit-color-swatch-wrapper,#border-color-pick::-webkit-color-swatch-wrapper{padding:2px;}
