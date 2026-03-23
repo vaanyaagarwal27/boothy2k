@@ -12,21 +12,19 @@
   inset: 0;
   z-index: 10;
   pointer-events: none;
-  opacity: 0.15;
+  opacity: 0.35;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   mix-blend-mode: overlay;
-  animation: noise 0.3s steps(2) infinite;
+  animation: noise 0.15s steps(6) infinite;
 }
 
 @keyframes noise {
   0% { transform: translate(0,0); }
-  100% { transform: translate(-10%,10%); }
-}
-
-@keyframes noise {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-5%,-5%); }
-  100% { transform: translate(5%,5%); }
+  20% { transform: translate(-2%,-3%); }
+  40% { transform: translate(3%,1%); }
+  60% { transform: translate(-1%,2%); }
+  80% { transform: translate(2%,-2%); }
+  100% { transform: translate(0,0); }
 }
 :root{
   --lime:#C8FF00;--lime-d:#8BB000;
