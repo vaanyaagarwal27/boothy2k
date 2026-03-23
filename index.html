@@ -6,6 +6,22 @@
 <title>booth.y2k</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
+
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.04; /* Very subtle! */
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Noise_Texture.png");
+  animation: noise 0.2s infinite steps(2);
+}
+
+@keyframes noise {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-5%,-5%); }
+  100% { transform: translate(5%,5%); }
+}
 :root{
   --lime:#C8FF00;--lime-d:#8BB000;
   --pink:#FF2D9B;--blue:#0047FF;--purple:#9B30FF;--orange:#FF6B1A;--yellow:#FFE135;
@@ -346,11 +362,15 @@ body{font-family:'Space Grotesk',sans-serif;color:var(--black);cursor:none;}
   </div>
   <div class="shoot-main">
     <div class="cam-wrap">
+      <div class="grain-overlay"></div> 
       <video id="webcam" autoplay playsinline muted></video>
       <div id="cam-fo"></div>
       <div class="cam-scanlines"></div>
       <div class="cam-vignette"></div>
-      <div class="cam-corners"><div class="cc-bl"></div><div class="cc-br"></div></div>
+      <div class="cam-corners">
+        <div class="cc-bl"></div>
+        <div class="cc-br"></div>
+      </div>
       <div id="big-cd"></div>
       <div id="flash"></div>
       <div id="film-burn"></div>
