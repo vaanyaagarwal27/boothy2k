@@ -1,4 +1,4 @@
-# 📸 BOOTH.Y2K | CSE Portfolio Project
+# 📸 BOOTH.Y2K 
 > **A high-fidelity web application simulating vintage photobooth hardware.**
 
 Built as a deep dive into **Browser APIs** and **DOM Manipulation**, BOOTH.Y2K leverages modern web technologies to recreate a nostalgic "Purikura" experience.
