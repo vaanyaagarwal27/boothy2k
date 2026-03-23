@@ -366,33 +366,59 @@ body{font-family:'Space Grotesk',sans-serif;color:var(--black);cursor:none;}
     <div id="shot-badge">shot 1/4</div>
     <div class="shoot-timer-row" id="timerOpts"></div>
   </div>
+
   <div class="shoot-main">
+    
     <div class="cam-wrap">
-      <div class="grain-overlay"></div> 
+      
+      <!-- VIDEO (base layer) -->
       <video id="webcam" autoplay playsinline muted></video>
-      <div id="cam-fo"></div>
+
+      <!-- OVERLAYS -->
+      <div class="grain-overlay"></div>
       <div class="cam-scanlines"></div>
       <div class="cam-vignette"></div>
+      <div id="cam-fo"></div>
+
+      <!-- DECOR -->
       <div class="cam-corners">
         <div class="cc-bl"></div>
         <div class="cc-br"></div>
       </div>
+
+      <!-- EFFECTS -->
       <div id="big-cd"></div>
       <div id="flash"></div>
       <div id="film-burn"></div>
+
     </div>
+
+    <!-- SIDE PANEL -->
     <div class="shoot-side">
       <div>
         <button class="btn-shutter" id="shutterBtn" onclick="startBurst()">📸 SHOOT</button>
+        
         <div class="progress-wrap">
-          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
           <div class="progress-lbl" id="progressLbl">ready</div>
         </div>
       </div>
-      <div><div class="slbl">filter</div><div class="filter-grid" id="filterGrid"></div></div>
-      <div style="flex:1;"><div class="slbl">shots</div><div class="side-thumbs" id="sideThumbs"></div></div>
+
+      <div>
+        <div class="slbl">filter</div>
+        <div class="filter-grid" id="filterGrid"></div>
+      </div>
+
+      <div style="flex:1;">
+        <div class="slbl">shots</div>
+        <div class="side-thumbs" id="sideThumbs"></div>
+      </div>
+
       <button class="btn btn-ghost" style="width:100%;font-size:.78rem;" onclick="goWelcome()">← back</button>
     </div>
+
   </div>
 </div>
 
